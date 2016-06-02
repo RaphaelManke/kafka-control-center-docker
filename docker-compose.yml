@@ -1,0 +1,12 @@
+zookeeper:
+  image: zookeeper
+  ports:
+    - "2181:2181"
+  links:
+    - kafka-server
+kafka-server:
+  image: kafka-server
+  ports:
+    - "9092:9092"
+  links:
+    - zookeeper
